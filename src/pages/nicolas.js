@@ -1,0 +1,3 @@
+function Nicolas() {
+	return 'Nicolas';
+}
