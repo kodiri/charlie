@@ -1,3 +1,0 @@
-function getBestPlayer() {
-    return undefined
-}

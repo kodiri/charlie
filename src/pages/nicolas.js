@@ -1,3 +1,0 @@
-function Nicolas() {
-	return 'Nicolas';
-}
