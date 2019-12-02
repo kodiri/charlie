@@ -1,3 +1,27 @@
 .table {
     display: flex;   
 }
+.teams {
+    text-align: start;
+    font-weight: bold;
+    
+}
+.item{
+
+   
+}
+.points{
+    font-weight: bold;
+}
+h3 {
+    text-decoration: underline;
+    background: rgb(196, 221, 221);
+    text-align: center;
+    padding: 25px;
+    flex: 1;
+}
+p {
+    border-bottom: 1px ridge;
+    padding-bottom: 10px;
+    
+}
