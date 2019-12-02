@@ -1,3 +1,0 @@
-function gray() {
-	return 'gray';
-}

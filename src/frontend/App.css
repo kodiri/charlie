@@ -71,3 +71,9 @@ img{
 
   
 }
+.table {
+  text-align: center;
+  position: relative;
+  top: 150px;
+  left: 300px;
+}
