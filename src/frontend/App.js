@@ -1,24 +1,22 @@
 import React from 'react';
-// import Data from './Data'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import '../frontend/App.css';
 import UserPage from './UserPage/UserPage';
-import PremTable from './PremTable/PremTable';
 import Homepage from './Homepage/Homepage';
 
 function App() {
 
   return (
-    <div className="App">
+    // <div>
+    //   <Homepage />
+    // </div>
+    <Router>
       <div>
-              <Homepage />
+        <Route exact path='/' component={Homepage} />
+        <Route exact path='/userpage' component={UserPage} />
       </div>
-      {/* <UserPage /> */}
-      <div className='table'>
-              <PremTable />
-      </div>
-      {/* <Data /> */}
-    </div>
-  );
+    </Router>
+);
 }
 
 export default App;
