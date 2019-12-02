@@ -18,37 +18,37 @@ export default function PremTable() {
     <>
       {/* 0: {position: 1, team: {id: 64, name: "Liverpool FC",…}, playedGames: 13, won: 12, draw: 1, lost: 0,…} */}
       <div className='table'>
-        <div>
+        <div className='item teams'>
           <h3>Teams</h3>
           {
             info.map(team => <p>{team.position}. {team.team.name}</p>)
           }
         </div>
-        <div>
+        <div className='item wins'>
           <h3>Wins</h3>
           {
             info.map(wins => <p>{wins.won}</p>)
           }
         </div>
-        <div>
+        <div className='item draws'>
           <h3>Draws</h3>
           {
             info.map(draws => <p>{draws.draw}</p>)
           }
         </div>
-        <div>
+        <div className='item loses'>
           <h3>Loses</h3>
           {
             info.map(loses => <p>{loses.lost}</p>)
           }
         </div>
-        <div>
+        <div className='item goal'>
           <h3>Goal Difference</h3>
           {
             info.map(gd => <p>{gd.goalDifference}</p>)
           }
         </div>
-        <div>
+        <div className='item points'>
           <h3>Points</h3>
           {
             info.map(entry => <p>{entry.points}</p>)
