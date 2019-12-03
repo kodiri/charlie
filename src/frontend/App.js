@@ -1,16 +1,55 @@
-import React from 'react';
-import getData from './getData'
-import '../frontend/App.css';
-import UserPage from './UserPage/UserPage';
+import React, {Component} from "react";
+import Toolbar from "./components/Toolbar/Toolbar.js"
+import SideDrawer from "./components/Sidedrawer/Sidedrawer"
+import Backdrop from './components/Backdrop/Backdrop.js'
 
-function App() {
+class App extends Component {
 
-  return (
-    <div className="App">
-      <h1>FootApp</h1>
-      <UserPage />
+  state = {sideDrawerOpen: false
+  }
+  drawerToggleClickHandler = () => {
+    this.setState((prevState)=> {
+      return {sideDrawerOpen: !prevState.sideDrawerOpen};
+    });
+  }
+  backdropClickHandler = () => {
+    this.setState({sideDrawerOpen: false});
+
+  }
+  render() {
+    
+    let backdrop;
+
+    if (this.state.sideDrawerOpen) {
+
+      backdrop =  <Backdrop click={this.backdropClickHandler}/>
+    }
+
+    return (
+    <div style={{height: "100%"}}>
+      <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+      <SideDrawer show={this.state.sideDrawerOpen}/>
+      {backdrop}
+      <main style={{marginTop: '64px'}}>
+      <p>Welcome to Foot App </p>
+      </main>
+   
+
     </div>
-  );
+    );
+  }
 }
 
-export default App;
+export default App
+
+
+
+
+
+
+ 
+  
+
+
+
+
