@@ -11,7 +11,6 @@ export default function PremTable() {
       headers: { 'X-Auth-Token': '0154c5dc13514833a457779bbaafdd13', 'Content-Type': 'application/json' },
     })
       .then(data => setInfo(data.data.standings[0].table));
-    //.then(data=> console.log(data.data.standings[0].table))
   }, []);
 
   return (
