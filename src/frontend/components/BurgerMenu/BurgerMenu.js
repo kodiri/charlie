@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Toolbar from '../Toolbar/Toolbar';
-import SideDrawer from '../Sidedrawer/SideDrawer';
+import SideDrawer from '../Sidedrawer/Side_Drawer';
 import Backdrop from '../Backdrop/Backdrop';
 
 class BurgerMenu extends Component {
