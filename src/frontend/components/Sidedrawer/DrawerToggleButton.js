@@ -1,11 +1,10 @@
 import React from "react";
 import "./DrawerToggleButton.css";
+import Icon from '../../Images/burgericon.png'
 
 const drawerToggleButton = props => (
     <button className="toggle-button" onClick={props.click} >
-        <div className="toggle-button_line"/>
-        <div className="toggle-button_line"/>
-        <div className="toggle-button_line"/>
+        <img src={Icon} alt='button'></img>
     </button>
 
 );

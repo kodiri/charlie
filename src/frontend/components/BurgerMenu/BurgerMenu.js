@@ -1,25 +1,42 @@
-import React, {useState} from "react";
-import Toolbar from "../Toolbar/Toolbar.js"
-import SideDrawer from "../Sidedrawer/Sidedrawer"
-import Backdrop from './components/Backdrop/Backdrop.js'
+import React, { Component } from 'react';
 
-function BurgerMenu() {
+import Toolbar from '../Toolbar/Toolbar';
+import SideDrawer from '../Sidedrawer/SideDrawer';
+import Backdrop from '../Backdrop/Backdrop';
 
-  const [sideDrawerOpen, setSideDraw] = useState(false)
-  const drawerToggleClickHandler = () => {
-    setSideDraw(!sideDrawerOpen);
+class BurgerMenu extends Component {
+  state = {
+    sideDrawerOpen: false
+  };
+
+  drawerToggleClickHandler = () => {
+    this.setState((prevState) => {
+      return {sideDrawerOpen: !prevState.sideDrawerOpen};
+    });
+  };
+
+  backdropClickHandler = () => {
+    this.setState({sideDrawerOpen: false});
+  };
+
+  render() {
+    let backdrop;
+
+    if (this.state.sideDrawerOpen) {
+      backdrop = <Backdrop click={this.backdropClickHandler} />
     }
-  const backdropClickHandler = () => {
-    setSideDraw(false);
-  }    
-
-  return (
-    <div className='burger_menu'>
-      <Toolbar drawerClickHandler={() => drawerToggleClickHandler()} />
-      <SideDrawer show={() => sideDrawerOpen()}/>
-      {sideDrawerOpen ? <Backdrop click={() => backdropClickHandler()}/> : <></>}
-    </div>
+    return (
+      <div style={{height: '100%'}}>
+        <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+        <SideDrawer show={this.state.sideDrawerOpen} />
+        {backdrop}
+        <main style={{marginTop: '64px'}}>
+          <p>This is the page content!</p>
+        </main>
+        
+      </div>
     );
+  }
 }
 
 export default BurgerMenu;
