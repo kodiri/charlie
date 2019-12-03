@@ -11,22 +11,25 @@ export default function Homepage() {
                 <div className='logo'>
                     <img src={logo} alt='logo'></img>
                 </div>
-                <div className='players'>
+                <div className='layout'>
                     <img className='cris' src={cristiano} alt='Cris' />
+                    <div className='form'>
+                        <form>
+                            <input className='name' type='text' placeholder='Please enter your name' />
+                            <br></br>
+                            <select className='select'>
+                                <option>REAL MADRID</option>
+                                <option>BARCELONA</option>
+                                <option>MAN CITY</option>
+                            </select>
+                            <button className='button'>ENTER</button>
+                        </form>
+                    </div>
                     <img className='messi' src={messi} alt='Messi' />
                 </div>
-                <div className='form'>
-                    <form>
-                        <input className='name' type='text' placeholder='Please enter your name' />
-                        <br></br>
-                        <select className='select'>
-                            <option>REAL MADRID</option>
-                            <option>BARCELONA</option>
-                            <option>MAN CITY</option>
-                        </select>
-                        <button className='button'>ENTER</button>
-                    </form>
+                <div className='players'>
                 </div>
+
             </div>
         </>
     )

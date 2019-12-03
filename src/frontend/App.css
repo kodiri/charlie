@@ -1,6 +1,6 @@
 
 .App{
-  background-image: url(images/campo2.jpg);
+  background-image: url('Images/campo2.jpg');
   height: 100vh;
   background-repeat: no-repeat;
   background-size:cover;
