@@ -1,0 +1,79 @@
+
+.App{
+  background-image: url('Images/campo2.jpg');
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+.form{
+  padding-top: 240px;  
+  margin: 0 auto;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.name{
+  outline: none;
+  margin:  0 auto;
+  width: 200px;
+  border: 0px;
+  /* padding: 15px; */
+  font-size:1em;
+  display: flex ;
+  height: 200px;;
+  justify-content: center;
+  height: 40px;
+  border-radius: 3px;
+
+}
+.select{
+  outline: none;
+  border: 0px;
+  width: 200px;
+  height: 40px;
+  font-size:1em;
+  display: flex ;
+  height: 200px;;
+  justify-content: center;
+  height: 40px;
+  margin-top:40px;
+}
+
+.button{
+  padding: 15px;
+  font-size:1em;
+  outline: none;
+  border: 0px;
+  border-radius: 3px;
+  background:black;
+  color:white;
+  height:40px;
+  width: 200px;
+  margin-top:40px;
+  
+}
+
+.logo{
+  padding-left: 50px;
+  padding-top: 50px;
+}
+
+img{
+  width: 10%;
+}
+ 
+@media screen and (max-width: 320px) {
+  img{
+    width:20%
+  }
+
+  
+}
+.table {
+  text-align: center;
+  position: relative;
+  top: 150px;
+  left: 300px;
+}
