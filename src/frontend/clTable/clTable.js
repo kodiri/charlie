@@ -25,10 +25,13 @@ export default function CLTable() {
 
     console.log(a);
 
-    return (
-        <>
-           <h3>table</h3>
-           <h1>{a}</h1>
+    return (   <>
+
         </>
     )
+
 }
+
+
+     
+ 

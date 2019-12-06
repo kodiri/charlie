@@ -1,5 +1,5 @@
 import React from 'react';
-// import PremTable from '../PremTable/PremTable';
+import PremTable from '../PremTable/PremTable';
 import MenuBar from '../components/BurgerMenu/BurgerMenu';
 import CLTable from "../clTable/clTable";
 
@@ -11,7 +11,7 @@ export default function UserPage() {
             <MenuBar />
             <h1>Welcome User</h1>
             <CLTable />
-            {/* <PremTable /> */}
+            <PremTable />
         </>
     )
 }
