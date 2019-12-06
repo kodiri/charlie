@@ -12,7 +12,7 @@ export default function PremTable() {
     })
       .then(data => setInfo(data.data.standings[0].table));
   }, []);
-
+  
   return (
     <>
       {/* 0: {position: 1, team: {id: 64, name: "Liverpool FC",…}, playedGames: 13, won: 12, draw: 1, lost: 0,…} */}
