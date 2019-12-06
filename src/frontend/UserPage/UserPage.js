@@ -1,5 +1,5 @@
 import React from 'react';
-import PremTable from '../PremTable/PremTable'
+// import PremTable from '../PremTable/PremTable'
 import Matches from '../Matches/Matches';
 import MenuBar from '../components/BurgerMenu/BurgerMenu';
 
