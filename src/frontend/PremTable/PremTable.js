@@ -15,7 +15,6 @@ export default function PremTable() {
   
   return (
     <>
-      {/* 0: {position: 1, team: {id: 64, name: "Liverpool FC",…}, playedGames: 13, won: 12, draw: 1, lost: 0,…} */}
       <div className='table'>
         <div className='item teams'>
           <h3>Teams</h3>
