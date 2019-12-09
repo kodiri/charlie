@@ -1,17 +1,22 @@
-import React from 'react';
-import PremTable from '../PremTable/PremTable';
+import React, { useState } from 'react';
+import { Route, Link, Switch } from 'react-router-dom';
 import MenuBar from '../components/BurgerMenu/BurgerMenu';
-import CLTable from "../clTable/clTable";
+import Tab from '../Tabs/TabsTest';
 
-
-export default function UserPage() {
+export default function UserPage({ name, team }) {
 
     return (
         <>
             {/* <MenuBar /> */}
-            <h1>Welcome User</h1>
-            <CLTable />
-            {/* <PremTable /> */}
+            <div className='userPage'>
+                <div className='logo'>
+                    <h1>Welcome {name}</h1>
+                </div>
+                <div className='team'>{team}</div>
+                <div>
+                    <Tab />
+                </div>
+            </div>
         </>
     )
 }

@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
+import getData from '../Data';
 import { Link } from 'react-router-dom';
 import logo from '../Images/logo.png';
 import messi from '../Images/messi.png';
 import cristiano from '../Images/cris.png';
 import './Homepage.css';
+//import { getDefaultWatermarks } from 'istanbul-lib-report';
 
-export default function Homepage() {
+export default function Homepage({setName, setTeam}) {
+
     return (
         <>
             <div className='App'>
-
                 <div className='layout'>
                     <img className='cris' src={cristiano} alt='Cris' />
                     <div className='form'>
@@ -17,13 +19,25 @@ export default function Homepage() {
                             <div className='logo center'>
                                 <img src={logo} alt='logo'></img>
                             </div>
-                            <input className='name' type='text' placeholder='Please enter your name' />
+                            <input className='name' 
+                                    type='text' 
+                                    placeholder='Please enter your name' 
+                                    name='name' 
+                                    onChange={event => {
+                                        setName(event.target.value);
+                                    }}/>
                             <br></br>
-                            <select className='name'>
-                                <option>REAL MADRID</option>
-                                <option>BARCELONA</option>
-                                <option>MAN CITY</option>
+                            <select className='name' onChange={event => {
+                                setTeam(event.target.value)
+                            }}>
+                                {
+                                    getData().map(a => (
+                                        <option key={a.id}>{a.name}</option>
+                                    ))
+                                }
                             </select>
+                            {/* <h1>Hello {name}</h1>
+                            <h1>Your team is: {team}</h1> */}
                             <div className='center'>
                                 <Link to='/userpage' className='link'>ENTER</Link>
                             </div>
@@ -33,8 +47,8 @@ export default function Homepage() {
                 </div>
                 <div className='players'>
                 </div>
-
             </div>
         </>
     )
 }
+
