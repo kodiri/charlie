@@ -4,7 +4,8 @@ import '../frontend/App.css';
 import UserPage from './UserPage/UserPage';
 import Homepage from './Homepage/Homepage';
 import Burger from './components/BurgerMenu/BurgerMenu'
-
+import  PremTable from './PremTable/PremTable'
+import  CLTable from './clTable/clTable.js'
 function App() {
 
   const [name, setName] = useState('');
