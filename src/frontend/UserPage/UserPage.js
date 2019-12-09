@@ -8,10 +8,10 @@ export default function UserPage() {
 
     return (
         <>
-            <MenuBar />
+            {/* <MenuBar /> */}
             <h1>Welcome User</h1>
             <CLTable />
-            <PremTable />
+            {/* <PremTable /> */}
         </>
     )
 }
