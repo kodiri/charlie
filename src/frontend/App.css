@@ -5,6 +5,14 @@
   background-repeat: no-repeat;
   background-size:cover;
 }
+.userPage {
+  background-image: url('Images/campo2.jpg');
+  background-size: cover;
+}
+.tabs {
+  background-color: rgba(44, 42, 150, 0.5);;
+  height: 100vh;
+}
 
 .form{
   padding-top: 240px;  
@@ -53,8 +61,12 @@
   width: 200px;
   margin-top:40px;
 }
-
+.team {
+  width: 50%;
+  margin: auto;
+}
 .logo{
+  color: white;
   padding-left: 50px;
   padding-top: 50px;
 }

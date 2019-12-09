@@ -11,6 +11,15 @@ const sideDrawer = props => {
     <nav className={drawerClasses}>
         <ul>
             <li>
+                <a href="/">Premier League Table</a>
+            </li>
+            <li>
+                <a href="/">Matches</a>
+            </li>
+            <li>
+                <a href="/">Champions League</a>
+            </li>
+            <li>
                 <a href="/">About us</a>
             </li>
             <li>
