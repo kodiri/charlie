@@ -9,7 +9,7 @@ import  CLTable from './clTable/clTable.js'
 function App() {
 
   const [name, setName] = useState('');
-  const [team, setTeam] = useState('');
+  const [team, setTeam] = useState(''); 
 
 
   return (

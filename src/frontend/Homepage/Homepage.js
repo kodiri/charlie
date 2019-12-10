@@ -5,7 +5,6 @@ import logo from '../Images/logo.png';
 import messi from '../Images/messi.png';
 import cristiano from '../Images/cris.png';
 import './Homepage.css';
-//import { getDefaultWatermarks } from 'istanbul-lib-report';
 
 export default function Homepage({setName, setTeam}) {
 
