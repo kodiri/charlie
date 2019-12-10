@@ -4,9 +4,6 @@ import getData from '../Data';
 
 export default function Matches({team}) {
     const [matches, setMatches] = useState([]);
-    console.log(team.id);
-    //const [team, setTeam] = ('');
-
     useEffect(() => {
         fetch('/rest/competitions')
             .then(response => response.json())

@@ -6,8 +6,6 @@ const Axios = require('axios');
 const Data = [];
 app.use(express.json());
 
-app.get('/', (req, res) => res.send("Welcome to Charlie team's FootApp"));
-
 app.use(express.static(path.join(__dirname, '../../build')));
 
 app.get('*', function (req, res) {
