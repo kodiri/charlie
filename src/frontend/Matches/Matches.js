@@ -36,7 +36,7 @@ export default function Matches({team}) {
         <div className=''>{
             matchDates.map(match => (
                 match.status === 'SCHEDULED' ?
-                <div className='match' key={match.id}>{match.awayTeam.name} - {match.homeTeam.name} <div><button>Match Prediction</button></div> </div> :
+                <div className='match' key={match.id}>{match.awayTeam.name} -- {match.homeTeam.name} <div><button>Match Prediction</button></div> </div> :
                 <div className='match' key={match.id}>{match.awayTeam.name} {match.score.fullTime.awayTeam} - {match.score.fullTime.homeTeam} {match.homeTeam.name} </div>
            ))
         }</div>
