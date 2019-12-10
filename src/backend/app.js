@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const port = process.end.PORT || 3001;
+const port = process.env.PORT || 3001;
 const Axios = require('axios');
 const Data = [];
 app.use(express.json());
