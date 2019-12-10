@@ -14,7 +14,7 @@ export default function UserPage({ name, team }) {
                 </div>
                 <div className='team'>{team}</div>
                 <div>
-                    <Tab />
+                    <Tab team={team} />
                 </div>
             </div>
         </>

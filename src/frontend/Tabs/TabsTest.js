@@ -5,7 +5,7 @@ import PremTable from '../PremTable/PremTable';
 import Matches from '../Matches/Matches';
 import './Tabs.css';
 
-export default function Test() {
+export default function Test({team}) {
     return (
         <>
             <div className='container-userpage'>
@@ -15,7 +15,7 @@ export default function Test() {
                             <Tab>Premier League Matches</Tab>
                             <Tab>Premier league Table</Tab>
                         </TabList>
-                        <TabPanel><Matches /> </TabPanel>
+                        <TabPanel><Matches team={team}  /> </TabPanel>
                         <TabPanel><PremTable /> </TabPanel>
                     </Tabs>
                 </div>
