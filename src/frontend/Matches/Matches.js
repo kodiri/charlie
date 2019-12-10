@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './Matches.css';
 import getData from '../Data';
 
-export default function Matches({team}) {
+export default function Matches() {
     const [matches, setMatches] = useState([]);
+    let team = localStorage.getItem('team')
+
     useEffect(() => {
         fetch('/rest/competitions')
             .then(response => response.json())
@@ -11,6 +13,8 @@ export default function Matches({team}) {
                 setMatches(matches.matches)
             })
     }, []);
+
+    const teamid = getData().filter(a => a.name === team).map(a => a.id);
 
     let today = new Date();
     let thisMonth = today.getMonth();
@@ -20,22 +24,21 @@ export default function Matches({team}) {
     let matchDates = matches.filter(a => {
         let apiMonth = new Date(a.utcDate).getMonth();
         let apiDate = new Date(a.utcDate).getDate();
-        let teamAway = a.awayTeam.name;
-        let teamHome = a.homeTeam.name;
-        return apiMonth === thisMonth && apiDate < next7Days && apiDate > last7Days && (teamAway === 'Manchester United FC' || teamHome === 'Manchester United FC')
+        let teamAway = a.awayTeam.id;
+        let teamHome = a.homeTeam.id;
+        return apiMonth === thisMonth && apiDate < next7Days && apiDate > last7Days && 
+                            (teamAway ===  Number(teamid) || teamHome === Number(teamid))
     });
+    console.log(matchDates);
 
-    //let myTeam = getData.filter(a => a.id === a.awayTeam);
-    //console.log(getData().map(a => a.id));
-
-    //console.log(matchDates);
     return (
-        <div className=''>{
+<div className=''>
+        {
             matchDates.map(match => (
                 match.status === 'SCHEDULED' ?
-                <div className='match' key={match.id}>{match.awayTeam.name} -- {match.homeTeam.name} <div><button>Match Prediction</button></div> </div> :
+                <div className='match' key={match.id}>{match.awayTeam.name} vs {match.homeTeam.name} <div><button>Match Prediction</button></div> </div> :
                 <div className='match' key={match.id}>{match.awayTeam.name} {match.score.fullTime.awayTeam} - {match.score.fullTime.homeTeam} {match.homeTeam.name} </div>
-           ))
-        }</div>
+            ))}
+        </div>
     )
 }
