@@ -1,4 +1,7 @@
 .table {
+    /*align-self: center;
+    text-align: center;*/
+    justify-content: center;
     margin-left: 0;
     display: flex;   
 }
@@ -11,13 +14,13 @@
 }
 h3 {
     text-decoration: underline;
-    background: rgb(196, 221, 221);
+    background: rgb(60, 119, 190);
     text-align: center;
     /* padding: 25px; */
     flex: 1;
 }
 p {
-    font-size: 12px;
+    font-size: 10px;
     border-bottom: 1px ridge;
-    padding-bottom: 10px;
+    padding-bottom: 3px;
 }

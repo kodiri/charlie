@@ -31,109 +31,39 @@ export default function CLTable() {
     return <div>Table</div>
   } else {
     return (
-      <div className="table">
-        <div className="item teams">
+      <div className="Cltable">
+        <div className='Cl-Container' >
+          <div id='scroller'>
+            <div className="Cl-item">
 
-          {
-            info.map((layer1, i) => <div>
-              <h3>Teams</h3>
-              <p>{layer1.map(group => <p>{group.team.name}</p>)}
-              </p>
-            </div>)
-          }
-        </div>
-
-        <div className="item playedGames">
-          {
-            info.map((layer1, i) => <div>
-              <h3>Played Games</h3>
-              <p>{layer1.map(group => <p>{group.playedGames}</p>)}
-              </p>
-              </div>) 
-          }
-         
-        </div>
-
-        <div className="item won">
-        {
-            info.map((layer1, i) => <div>
-              <h3>Won</h3>
-              <p>{layer1.map(group => <p>{group.won}</p>)}
-              </p>
-              </div>) 
-          }
-      </div>
-
-      <div className="item drawn">
-        {
-            info.map((layer1, i) => <div>
-              <h3>Drawn</h3>
-              <p>{layer1.map(group => <p>{group.draw}</p>)}
-              </p>
-              </div>) 
-          }
-      </div>
-
-       
-
-        <div className="item lost">
-        {
-            info.map((layer1, i) => <div>
-              <h3>Lost</h3>
-              <p>{layer1.map(group => <p>{group.lost}</p>)}
-              </p>
-              </div>) 
-          }
-      </div>
+              {
+                info.map((layer1, i) => <div className='content'>
+                  <flex>
+                    <h5>Teams</h5>
+                    <h5>Plyd</h5>
+                    <h5>Won</h5>
+                    <h5>Drawn</h5>
+                    <h5>Lost</h5>
+                    <h5>For</h5>
+                    <h5>Against</h5>
+                    <h5>GD</h5>
+                    <h5>Points</h5>
+                  </flex>
+                  {layer1.map(group => <p> {group.team.name}
+                    {group.playedGames} - {group.won} - {group.draw} - {group.lost} -
+                    {group.goalsFor} - {group.goalsAgainst} - {group.goalDifference} -
+                    {group.points}</p>)}
+                </div>)
+              }
+            </div>
 
 
-        <div className="item lost">
-        {
-            info.map((layer1, i) => <div>
-              <h3>For</h3>
-              <p>{layer1.map(group => <p>{group.goalsFor}</p>)}
-              </p>
-              </div>) 
-          }
-        </div>
-
-      <div className="item against">
-        {
-            info.map((layer1, i) => <div>
-              <h3>Against</h3>
-              <p>{layer1.map(group => <p>{group.goalsAgainst}</p>)}
-              </p>
-              </div>) 
-          }
-      </div>
-
-
-      <div className="goal difference">
-        {
-            info.map((layer1, i) => <div>
-              <h3>GD</h3>
-              <p>{layer1.map(group => <p>{group.goalDifference}</p>)}
-              </p>
-              </div>) 
-          }
-      </div>
-
-        {/* <div className="points">
+            {/* <div className="points">
           <h3>Points</h3>
         </div> */}
 
-      <div className="goal difference">
-        {
-            info.map((layer1, i) => <div>
-              <h3>Points</h3>
-              <p>{layer1.map(group => <p>{group.points}</p>)}
-              </p>
-              </div>) 
-          }
-      </div>
-
-
-
+          </div>
+        </div>
       </div>
     )
   }

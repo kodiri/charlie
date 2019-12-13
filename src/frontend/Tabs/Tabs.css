@@ -1,5 +1,11 @@
 .container-userpage {
+    justify-content: center;
     width: 50%;
     margin: auto;
-    height: 100vh;
+    height: 100%;
+    
+}
+
+.tabs {
+    justify-items: center;
 }
