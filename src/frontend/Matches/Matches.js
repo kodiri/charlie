@@ -18,27 +18,40 @@ export default function Matches() {
 
     let today = new Date();
     let thisMonth = today.getMonth();
-    let last7Days = today.getDate() - 7;
+    let last7Days = today.getDate() - 14;
     let next7Days = today.getDate() + 14;
 
-    let matchDates = matches.filter(a => {
+    let matchInfo = matches.filter(a => {
         let apiMonth = new Date(a.utcDate).getMonth();
         let apiDate = new Date(a.utcDate).getDate();
         let teamAway = a.awayTeam.id;
         let teamHome = a.homeTeam.id;
-        return apiMonth === thisMonth && apiDate < next7Days && apiDate > last7Days && 
-                            (teamAway ===  Number(teamid) || teamHome === Number(teamid))
+        return apiMonth === thisMonth && apiDate < next7Days && apiDate > last7Days &&
+            (teamAway === Number(teamid) || teamHome === Number(teamid))
     });
-    console.log(matchDates);
+
+    function matchPredictions(home, away) {
+        let homeTeam = home;
+        let awayTeam = away;
+        console.log(homeTeam, awayTeam);
+    }
 
     return (
-<div className=''>
-        {
-            matchDates.map(match => (
-                match.status === 'SCHEDULED' ?
-                <div className='match' key={match.id}>{match.awayTeam.name} vs {match.homeTeam.name} <div><button>Match Prediction</button></div> </div> :
-                <div className='match' key={match.id}>{match.awayTeam.name} {match.score.fullTime.awayTeam} - {match.score.fullTime.homeTeam} {match.homeTeam.name} </div>
-            ))}
+        <div className=''>
+            {
+                matchInfo.map(match => {
+                    let home = match.homeTeam.name;
+                    let away = match.awayTeam.name;
+                    let matchDate = match.utcDate.slice(0, 10);
+                    return match.status === 'SCHEDULED' ?
+                <div className='scores' key={match.id}> 
+                    <span className='match'>{home}</span> <span className='match-center'>vs </span> 
+                        <span className='match'>{away}</span> <div>{matchDate}</div> 
+                            <div><button onClick={() => matchPredictions(home, away)}>Match Prediction</button></div> </div> :
+                <div className='scores' key={match.id}><span className='match'>{home}</span> {match.score.fullTime.homeTeam} - 
+                    {match.score.fullTime.awayTeam} <span className='match'>{away}</span> 
+                        <div>{matchDate}</div> </div>
+                    })}
         </div>
     )
 }

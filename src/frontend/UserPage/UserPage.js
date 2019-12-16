@@ -8,7 +8,6 @@ export default function UserPage({ team }) {
 
     return (
         <>
-            {/* <MenuBar /> */}
             <div className='userPage'>
                 <div className='logo'>
                     <h1>Welcome {name}</h1>

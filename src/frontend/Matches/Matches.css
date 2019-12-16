@@ -1,7 +1,15 @@
-.match {
+.scores {
     text-align: center;
-    font-size: 20px;
-    padding: 5px;
+    font-size: 15px;
+    padding: 20px;
     border-bottom: 1px ridge;
-    padding: 50px;
+}
+
+.match {
+    font-weight: bold;
+}
+
+.match-center {
+    font-style: italic;
+    text-align: center;
 }
