@@ -13,7 +13,7 @@ export default function Data() {
             {name: "Wolverhampton Wanderers", id: 76, rating: 5},
             {name: "Burnley", id: 328, rating: 4},
             {name: "Leicester City", id: 338, rating: 7},
-            {name: "Southhampton", id: 340, rating: 3 },
+            {name: "Southampton", id: 340, rating: 3 },
             {name: "Watford City", id: 346,  rating: 2},
             {name: "Crystal Palace", id: 354, rating: 4},
             {name: "Sheffield United", id: 356, rating: 4},

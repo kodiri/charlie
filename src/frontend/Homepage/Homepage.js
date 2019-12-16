@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import getData from '../Data';
 import { Link } from 'react-router-dom';
 import logo from '../Images/logo.png';
@@ -6,7 +6,7 @@ import messi from '../Images/messi.png';
 import cristiano from '../Images/cris.png';
 import './Homepage.css';
 
-export default function Homepage({setName, setTeam}) {
+export default function Homepage() {
 
     return (
         <>
@@ -23,11 +23,11 @@ export default function Homepage({setName, setTeam}) {
                                     placeholder='Please enter your name' 
                                     name='name' 
                                     onChange={event => {
-                                        setName(event.target.value);
+                                        localStorage.setItem('name', event.target.value)
                                     }}/>
                             <br></br>
                             <select className='name' onChange={event => {
-                                setTeam(event.target.value)
+                                localStorage.setItem('team', event.target.value)
                             }}>
                                 {
                                     getData().map(a => (
@@ -35,8 +35,6 @@ export default function Homepage({setName, setTeam}) {
                                     ))
                                 }
                             </select>
-                            {/* <h1>Hello {name}</h1>
-                            <h1>Your team is: {team}</h1> */}
                             <div className='center'>
                                 <Link to='/userpage' className='link'>ENTER</Link>
                             </div>

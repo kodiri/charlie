@@ -15,6 +15,8 @@
     "react-tabs": "^3.0.0"
   },
   "scripts": {
+    "start": "NODE_ENV=production npm-run-all -s build _start_heroku_backend",
+    "_start_heroku_backend": "node src/backend/app.js",
     "start-all": "npm-run-all -p start-frontend start-backend",
     "start-frontend": "react-scripts start",
     "start-backend": "nodemon src/backend/app.js",
