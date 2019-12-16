@@ -26,9 +26,9 @@ export default function PremTable() {
             <div className='list'>Pts</div>
         </div>
           {
-            info.map(team => <div className='lines'>
-              <div className='names'>{team.position}. {team.team.name}</div>
-              <div className='scores'>
+            info.map((team,i) => <div key={i} className='lines'>
+              <div  className='names'>{team.position}. {team.team.name}</div>
+              <div className='prem-points'>
                 <div className='scores-item'>{team.won}</div>
                 <div className='scores-item'>{team.draw}</div>
                 <div className='scores-item'>{team.lost}</div>

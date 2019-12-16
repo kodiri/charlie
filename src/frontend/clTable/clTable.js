@@ -35,8 +35,8 @@ export default function CLTable() {
         <div id='scroller'>
           {
             info.map((layer1, i) =>
-              <div className='content'>
-                <flex className='head'>
+              <div key={i} className='content'>
+                <div className='head'>
                   <div className='Teams'>Teams</div>
                   <div className='li'>Plyd</div>
                   <div className='li'>Won</div>
@@ -46,9 +46,9 @@ export default function CLTable() {
                   <div className='li'>AG/ST</div>
                   <div className='li'>GD</div>
                   <div className='li'>Points</div>
-                </flex>
-                {layer1.map(group =>
-                  <div className='champions'>
+                </div>
+                {layer1.map((group, i) =>
+                  <div key={i} className='champions'>
                     <div className='c-Teams'>{group.team.name}</div>
                     <div className='li'>{group.playedGames}</div>
                     <div className='li'>{group.won}</div>

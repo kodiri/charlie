@@ -12,9 +12,6 @@
     width: 100vw;
   }
   
-  flex {
-    display: flex;
-  }
 
   .content {
     display: grid;
