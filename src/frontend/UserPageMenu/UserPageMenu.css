@@ -1,0 +1,20 @@
+.usermenu {
+    display: flex;
+    overflow: hidden;
+    background: rgb(45, 48, 107);
+    color: white;
+    
+}
+
+.menu-item {
+    display: block;
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+   
+}
+
+.menu-item:hover {
+    background-color: rgb(134, 134, 199);
+  }
+

@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuBar from '../components/BurgerMenu/BurgerMenu';
+// import MenuBar from '../components/BurgerMenu/BurgerMenu';
 import Tab from '../Tabs/TabsTest';
 
 export default function UserPage({ team }) {

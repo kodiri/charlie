@@ -12,17 +12,34 @@ export default function PremTable() {
     })
       .then(data => setInfo(data.data.standings[0].table));
   }, []);
-  
+
   return (
     <>
       <div className='table'>
-        <div className='item teams'>
-          <h3>Teams</h3>
-          {
-            info.map(team => <p>{team.position}. {team.team.name}</p>)
-          }
+        <div className='table-Container'>
+          <div className='list-team'>Teams</div>
+          
+            <div className='list'>Wins</div>
+            <div className='list'>Draws</div>
+            <div className='list'>Loses</div>
+            <div className='list'>G/D</div>
+            <div className='list'>Pts</div>
         </div>
-        <div className='item wins'>
+          {
+            info.map((team,i) => <div key={i} className='lines'>
+              <div  className='names'>{team.position}. {team.team.name}</div>
+              <div className='prem-points'>
+                <div className='scores-item'>{team.won}</div>
+                <div className='scores-item'>{team.draw}</div>
+                <div className='scores-item'>{team.lost}</div>
+                <div className='scores-item'>{team.goalDifference} </div>
+                <div className='scores-item points'>{team.points}</div>
+              </div>
+            </div>
+            )
+          }
+      </div>
+      {/*<div className='item wins'>
           <h3>Wins</h3>
           {
             info.map(wins => <p>{wins.won}</p>)
@@ -51,8 +68,8 @@ export default function PremTable() {
           {
             info.map(entry => <p>{entry.points}</p>)
           }
-        </div>
-      </div>
+        </div>*/}
+
 
     </>
   )

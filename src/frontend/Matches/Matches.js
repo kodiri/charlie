@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Matches.css';
-import getData from '../Data';
+ import getData from '../Data';
 
 export default function Matches() {
     const [matches, setMatches] = useState([]);
