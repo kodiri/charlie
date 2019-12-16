@@ -32,38 +32,40 @@ export default function CLTable() {
   } else {
     return (
       <div className="Cltable">
-        <div className='Cl-Container' >
-          <div id='scroller'>
-            <div className="Cl-item">
-
-              {
-                info.map((layer1, i) => <div className='content'>
-                  <flex>
-                    <h5>Teams</h5>
-                    <h5>Plyd</h5>
-                    <h5>Won</h5>
-                    <h5>Drawn</h5>
-                    <h5>Lost</h5>
-                    <h5>For</h5>
-                    <h5>Against</h5>
-                    <h5>GD</h5>
-                    <h5>Points</h5>
-                  </flex>
-                  {layer1.map(group => <p> {group.team.name}
-                    {group.playedGames} - {group.won} - {group.draw} - {group.lost} -
-                    {group.goalsFor} - {group.goalsAgainst} - {group.goalDifference} -
-                    {group.points}</p>)}
-                </div>)
-              }
-            </div>
-
-
-            {/* <div className="points">
+        <div id='scroller'>
+          {
+            info.map((layer1, i) =>
+              <div className='content'>
+                <flex className='head'>
+                  <div className='Teams'>Teams</div>
+                  <div className='li'>Plyd</div>
+                  <div className='li'>Won</div>
+                  <div className='li'>Drawn</div>
+                  <div className='li'>Lost</div>
+                  <div className='li'>For</div>
+                  <div className='li'>AG/ST</div>
+                  <div className='li'>GD</div>
+                  <div className='li'>Points</div>
+                </flex>
+                {layer1.map(group =>
+                  <div className='champions'>
+                    <div className='c-Teams'>{group.team.name}</div>
+                    <div className='li'>{group.playedGames}</div>
+                    <div className='li'>{group.won}</div>
+                    <div className='li'> {group.draw}</div>
+                    <div className='li'> {group.lost}</div>
+                    <div className='li'> {group.goalsFor}</div>
+                    <div className='li'>{group.goalsAgainst}</div>
+                    <div className='li'>{group.goalDifference}</div>
+                    <div className='li'> {group.points} </div>
+                  </div>
+                )}
+              </div>)
+          }
+        </div>
+        {/* <div className="points">
           <h3>Points</h3>
         </div> */}
-
-          </div>
-        </div>
       </div>
     )
   }
