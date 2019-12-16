@@ -1,23 +1,49 @@
 .table {
-    margin-left: 0;
-    display: flex;   
+    width: 100%;
+    justify-content: center;
 }
-.teams {
-    text-align: start;
-    font-weight: bold;   
+
+.table-Container {
+    display: flex;
+    background: rgb(60, 119, 190);
+    
+    
 }
-.points{
-    font-weight: bold;
-}
-h3 {
-    text-decoration: underline;
-    background: rgb(196, 221, 221);
+.list-team {
+    flex: 4;
     text-align: center;
-    /* padding: 25px; */
+}
+
+.list {
     flex: 1;
 }
-p {
-    font-size: 12px;
+
+.lines {
+    display: flex;
     border-bottom: 1px ridge;
-    padding-bottom: 10px;
+    padding-bottom: 3px;
+    
 }
+
+.names {
+    flex: 1;
+    font-weight: bold;
+}
+
+.scores {
+    display: flex;
+    flex: 1;
+}
+.scores-item {
+    flex: 1;
+}
+.points {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    .list-team {
+        flex: 1;
+        
+    }
+  }
