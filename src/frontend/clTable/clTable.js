@@ -8,7 +8,7 @@ export default function CLTable() {
   const [info, setInfo] = useState([])
 
   useEffect(() => {
-    Axios.get('http://api.football-data.org/v2/competitions/2001/standings', {
+    Axios.get('https://api.football-data.org/v2/competitions/2001/standings', {
       headers: { 'X-Auth-Token': '0154c5dc13514833a457779bbaafdd13', 'Content-Type': 'application/json' },
     })
       .then(data => setInfo(data.data.standings
