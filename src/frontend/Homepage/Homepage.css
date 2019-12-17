@@ -41,7 +41,7 @@
     display: flex;
     justify-content: center;
     justify-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
   .layout {
     display: flex;
@@ -50,15 +50,13 @@
     width: 30%;
     flex: 1;
     align-self: flex-end;
-  
-    
  }
  .messi {
    width: 30%;
    flex: 1;
    align-self: flex-end;
-   
  }
+ 
   @media screen and (max-width: 600px) {
     .messi {
       display: none;
@@ -70,5 +68,8 @@
     padding-top: 150px;
     justify-content: center;
     padding-left: 25%;
+    }
+    .logo {
+      margin-bottom: 0;
     }
   }

@@ -4,6 +4,8 @@ import './Matches.css';
 
 export default function Matches() {
     const [matches, setMatches] = useState([]);
+    const [predictions, setPredictions] = useState([]);
+    const [selectedId, setSelectedId] = useState([]);
     let team = localStorage.getItem('team')
 
     useEffect(() => {
@@ -15,6 +17,7 @@ export default function Matches() {
     }, []);
 
     const teamid = getData().filter(a => a.name === team).map(a => a.id);
+    //const teamRank = getData().filter(a => a.name === team).map(a => a.rating);
 
     let today = new Date();
     let thisMonth = today.getMonth();
@@ -30,25 +33,32 @@ export default function Matches() {
             (teamAway === Number(teamid) || teamHome === Number(teamid))
     });
 
-    function matchPredictions(home, away) {
+    function matchPredictions(home, away, id) {
         let homeTeam = home;
         let awayTeam = away;
-        console.log(homeTeam, awayTeam);
+        setSelectedId(id);
+        console.log(selectedId);
+        let UnrealisticPrediction = `${homeTeam} ${Math.ceil(Math.random() * 10)} - ${Math.ceil(Math.random() * 10)} ${awayTeam}`;
+        setPredictions(UnrealisticPrediction);
     }
 
-    return (
-        <div className=''>
+    console.log(predictions);
+
+    return(
+        
+        <div className='match-parent-div'>
             {
                 matchInfo.map(match => {
-                    let home = match.homeTeam.name;
-                    let away = match.awayTeam.name;
+                    let home = match.homeTeam.name.replace(/FC/g, '').trim();
+                    let away = match.awayTeam.name.replace(/FC/g, '').trim();
                     let matchDate = match.utcDate.slice(0, 10);
+                    let idForKey = match.id;
                     return match.status === 'SCHEDULED' ?
-                <div className='scores' key={match.id}> 
+                <div className='scores' key={idForKey}> 
                     <span className='match'>{home}</span> <span className='match-center'>vs </span> 
                         <span className='match'>{away}</span> <div>{matchDate}</div> 
-                            <div><button onClick={() => matchPredictions(home, away)}>Match Prediction</button></div> </div> :
-                <div className='scores' key={match.id}><span className='match'>{home}</span> {match.score.fullTime.homeTeam} - 
+                            <div><button onClick={() => matchPredictions(home, away, match.id)}>Match Prediction</button></div> <p>{selectedId === match.id ? predictions : ''}</p> </div> :
+                <div className='scores' key={idForKey}><span className='match'>{home}</span> {match.score.fullTime.homeTeam} - 
                     {match.score.fullTime.awayTeam} <span className='match'>{away}</span> 
                         <div>{matchDate}</div> </div>
                     })}
