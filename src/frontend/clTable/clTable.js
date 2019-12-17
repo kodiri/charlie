@@ -16,7 +16,7 @@ export default function CLTable() {
   }, []);
 
   if (info.length < 1) {
-    return <div>Table</div>
+    return <div>Tablee</div>
   } else {
     return (
       <div className="Cltable">
