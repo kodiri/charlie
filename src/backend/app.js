@@ -15,6 +15,7 @@ app.get('/rest/competitions', (req, res) => {
     res.send(response.data)
   })
 });
+
 app.listen(port, () => console.log(`${port}`));
 
 app.get('*', function (req, res) {
