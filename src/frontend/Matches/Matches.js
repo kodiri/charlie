@@ -37,12 +37,9 @@ export default function Matches() {
         let homeTeam = home;
         let awayTeam = away;
         setSelectedId(id);
-        console.log(selectedId);
         let UnrealisticPrediction = `${homeTeam} ${Math.ceil(Math.random() * 10)} - ${Math.ceil(Math.random() * 10)} ${awayTeam}`;
         setPredictions(UnrealisticPrediction);
     }
-
-    console.log(predictions);
 
     return(
         
