@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import './clTable.css';
+import Loading from '../Loading/Loading';
 
 
 export default function CLTable() {
 
   const [info, setInfo] = useState([])
+
+  let groups = ['A', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 
   useEffect(() => {
     fetch('/rest/standingsCL')
@@ -16,7 +19,7 @@ export default function CLTable() {
   }, []);
 
   if (info.length < 1) {
-    return <div>Tablee</div>
+    return <Loading />
   } else {
     return (
       <div className="Cltable">
@@ -24,19 +27,22 @@ export default function CLTable() {
           {
             info.map((layer1, i) =>
               <div key={i} className='content'>
+                <div className='uefa-cl-group-year'>UEFA Champions League - Group {groups[i + 1]} 2019/20</div>
                 <div className='head'>
-                  <div className='Teams'>Teams</div>
-                  <div className='li'>Plyd</div>
-                  <div className='li'>Won</div>
-                  <div className='li'>Drawn</div>
-                  <div className='li'>Lost</div>
-                  <div className='li'>For</div>
-                  <div className='li'>AG/ST</div>
+                  <div className='table-position-hashtag'>#</div>
+                  <div className='Teams'>Team</div>
+                  <div className='li'>Pl</div>
+                  <div className='li'>W</div>
+                  <div className='li'>D</div>
+                  <div className='li'>L</div>
+                  <div className='li'>F</div>
+                  <div className='li'>A</div>
                   <div className='li'>GD</div>
-                  <div className='li'>Points</div>
+                  <div className='li'>Pts</div>
                 </div>
                 {layer1.map((group, i) =>
                   <div key={i} className='champions'>
+                    <div className='li-position'>{group.position}</div>
                     <div className='c-Teams'>{group.team.name}</div>
                     <div className='li'>{group.playedGames}</div>
                     <div className='li'>{group.won}</div>
@@ -54,10 +60,6 @@ export default function CLTable() {
       </div>
     )
   }
-
-
-
-
 }
 
 
