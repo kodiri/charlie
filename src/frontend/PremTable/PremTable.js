@@ -16,18 +16,19 @@ export default function PremTable() {
   return (
     <>
       <div className='table'>
+        <div className='header'>Premier League 2019/20</div>
         <div className='table-Container'>
-          <div className='list-team'>Teams</div>
+          <div className='list-team'> # Teams</div>
 
-          <div className='list'>Wins</div>
-          <div className='list'>Draws</div>
-          <div className='list'>Loses</div>
+          <div className='list'>W</div>
+          <div className='list'>D</div>
+          <div className='list'>L</div>
           <div className='list'>G/D</div>
           <div className='list'>Pts</div>
         </div>
         {
           info.map((team, i) => <div key={i} className='lines'>
-            <div className='names'>{team.position}. {team.team.name === 'Wolverhampton Wanderers FC' ? 'Wolves' : team.team.name.replace(/FC/g, '')}</div>
+            {team.position} <div className='names'> {team.team.name === 'Wolverhampton Wanderers FC' ? 'Wolves' : team.team.name.replace(/FC/g, '')}</div>
             <div className='prem-points'>
               <div className='scores-item'>{team.won}</div>
               <div className='scores-item'>{team.draw}</div>
