@@ -61,8 +61,8 @@ export default function Matches() {
             <div className='match-parent-div'>
                 {
                     matchInfo.map(match => {
-                        let home = match.homeTeam.name.replace(/ FC /g, '').trim();
-                        let away = match.awayTeam.name.replace(/ FC /g, '').trim();
+                        let home = match.homeTeam.name.replace(/A?FC/g, '').trim();
+                        let away = match.awayTeam.name.replace(/A?FC/g, '').trim();
                         let matchDate = match.utcDate.slice(0, 10);
                         let idForKey = match.id;
                         return match.status === 'SCHEDULED' ?
