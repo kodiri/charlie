@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import getData from '../Data';
 import { Link } from 'react-router-dom';
 import logo from '../Images/logo.png';
@@ -7,6 +7,11 @@ import cristiano from '../Images/cris.png';
 import './Homepage.css';
 
 export default function Homepage() {
+
+    useEffect(() => {
+        let firstteam = document.querySelector('option')
+        firstteam.disabled = true;
+    }, [])
 
     return (
         <>

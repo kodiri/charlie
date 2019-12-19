@@ -64,14 +64,28 @@ export default function Matches() {
                         let home = match.homeTeam.name.replace(/A?FC/g, '').trim();
                         let away = match.awayTeam.name.replace(/A?FC/g, '').trim();
                         let matchDate = match.utcDate.slice(0, 10);
+                        let date = new Date(matchDate)
+                        let matchDay = new Date(date).getDate();
+                        let matchMonth = new Date(date).getMonth()+1;
+                        let matchYear = new Date(date).getFullYear();
                         let idForKey = match.id;
-                        return match.status === 'SCHEDULED' ?
+                        return match.status === 'SCHEDULED' || match.status === 'POSTPONED' ?
                             <div className='scores' key={idForKey}>
-                                <span className='match'>{home}</span> <span className='match-center'>vs </span>
-                                <span className='match'>{away}</span> <div>{matchDate}</div>
-                                <div className='pred-button'><button onClick={() => matchPredictions(home, away, match.id)}>Match Prediction</button></div> <p>{selectedId === match.id ? predictions : ''}</p> </div> :
-                            <div className='scores' key={idForKey}><span className='match'>{home}</span> {match.score.fullTime.homeTeam}-{match.score.fullTime.awayTeam} <span className='match'>{away}</span>
-                                <div>{matchDate}</div> </div>
+                                <div className='scores-of-matches'>
+                                    <h3 className='team-home'>{home}</h3> <h3 className='team-vs-team'> vs </h3>
+                                    <h3 className='team-away'>{away}</h3>
+                                </div>
+                                <p className='match-predictions'>{selectedId === match.id ? predictions : ''}</p>
+                                <div className='pred-button'><button onClick={() => matchPredictions(home, away, match.id)}>Match Prediction</button></div> 
+                                <div className='match-dates'>{`${matchDay}-${matchMonth}-${matchYear}`}</div>
+                            </div>:
+                            <div className='scores' key={idForKey}>
+                                <div className='scores-of-matches'>
+                                    <h3 className='team-home'>{home}</h3> <h3 className='team-vs-team'>{match.score.fullTime.homeTeam}-{match.score.fullTime.awayTeam}</h3> 
+                                        <h3 className='team-away'>{away}</h3>
+                                </div> 
+                                <div className='match-dates'>{`${matchDay}-${matchMonth}-${matchYear}`}</div> 
+                            </div>
                     })}
             </div>
         )
