@@ -1,21 +1,43 @@
 .scores {
-    text-align: center;
+    font-family: sans-serif;
     font-size: 15px;
-    padding: 20px;
     border-bottom: 1px ridge rgba(70, 70, 70, 0.2);
 }
 
-.match {
-    font-family: sans-serif;
-    font-weight: bold;
-}
+.team-home {
+    flex: 3;
+    text-align: right;
+    font-weight: 600;
+} 
+
+.team-away {
+    flex: 3;
+    font-weight: 600;
+} 
 
 .pred-button {
     padding: 5px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
-.match-center {
+.match-dates {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.team-vs-team {
     font-style: italic;
+    text-align: center;
+    flex: 1;
+}
+.scores-of-matches {
+    display: flex;
+    justify-content: center;
+}
+
+.match-predictions {
+    /* position: absolute; */
     text-align: center;
 }
 

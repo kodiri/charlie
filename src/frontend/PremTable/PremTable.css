@@ -7,9 +7,6 @@
     text-align: center;
   }
 
-
-
-
 .table {
     width: 100%;
     justify-content: center;
@@ -21,7 +18,7 @@
 }
 
 .list-team {
-    flex: 6;
+    flex: 5;
     text-align: start;
     margin-left: 10px;
     padding-bottom: 4px;
@@ -29,6 +26,7 @@
 
 .list {
     flex: 1;
+    text-align: center;
 }
 
 .lines {
@@ -36,14 +34,17 @@
     border-bottom: 1px ridge rgba(70, 70, 70, 0.2);
     padding: 4px 2px 4px 10px;
     font-size: 15px;
-    
-    
+}
+
+.positions {
+    font-family: sans-serif;
+    text-align: center;
+    padding-right: 5px;
 }
 
 .names {
     flex: 1;
     font-family: sans-serif;
-    margin-left: 6px;
     font-weight: 400;
 }
 
@@ -54,6 +55,7 @@
 }
 .scores-item {
     flex: 1;
+    text-align: center;
 }
 /* .points {
     font-weight: bold;
@@ -61,15 +63,14 @@
 
 @media screen and (max-width: 600px) {
     .list-team {
-        flex: 6; 
+        flex: 5; 
     }
     .table {
         overflow: scroll;
-        height: 600px;
+        height: 80vh;
     }
     .names {
-        margin-left: 0px;
-
+        margin-left: 0px
     }
 
   }

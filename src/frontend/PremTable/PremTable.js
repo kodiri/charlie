@@ -33,7 +33,7 @@ export default function PremTable() {
           </div>
           {
             info.map((team, i) => <div key={i} className='lines'>
-              {team.position} <div className='names'> {team.team.name === 'Wolverhampton Wanderers FC' ? 'Wolves' : team.team.name.replace(/FC/g, '')}</div>
+              <div className='positions'>{team.position}</div> <div className='names'> { team.team.name === 'Wolverhampton Wanderers FC' ? 'Wolves' : team.team.name.replace(/FC/g, '')}</div>
               <div className='prem-points'>
                 <div className='scores-item'>{team.won}</div>
                 <div className='scores-item'>{team.draw}</div>
