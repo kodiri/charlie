@@ -34,10 +34,13 @@
 .scores-of-matches {
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 .match-predictions {
-    /* position: absolute; */
+    margin-bottom: 5px;
+    font-family: sans-serif;
+    font-style: italic;
     text-align: center;
 }
 
