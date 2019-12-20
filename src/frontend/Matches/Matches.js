@@ -75,9 +75,11 @@ export default function Matches() {
                                     <h3 className='team-home'>{home}</h3> <h3 className='team-vs-team'> vs </h3>
                                     <h3 className='team-away'>{away}</h3>
                                 </div>
-                                <p className='match-predictions'>{selectedId === match.id ? predictions : ''}</p>
-                                <div className='pred-button'><button onClick={() => matchPredictions(home, away, match.id)}>Match Prediction</button></div> 
-                                <div className='match-dates'>{`${matchDay}-${matchMonth}-${matchYear}`}</div>
+                                <div>
+                                    <div className='match-dates'>{`${matchDay}-${matchMonth}-${matchYear}`}</div>
+                                    <div className='match-predictions'>{selectedId === match.id ? predictions : '' }&nbsp;</div>
+                                    <div className='pred-button'><button onClick={() => matchPredictions(home, away, match.id)}>Match Prediction</button></div> 
+                                </div>
                             </div>:
                             <div className='scores' key={idForKey}>
                                 <div className='scores-of-matches'>

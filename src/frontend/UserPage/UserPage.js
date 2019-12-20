@@ -1,6 +1,5 @@
 import React from 'react';
 import Tab from '../Tabs/TabsTest';
-import ManU from '../TeamLogos/manutd.png'
 import getData from '../Data';
 
 export default function UserPage({ team }) {
